@@ -14,6 +14,11 @@ Funkcja: Promocja procentowa
     Kiedy ustawiam dla niego promocję na 110%
     Wtedy promocja nie może być wprowadzona
     
+  Scenariusz: Ustawianie promocji procentowej na obniżkę mniejszą od 0%
+    Mając produkt "Masło" o cenie 4 zł
+    Kiedy ustawiam dla niego promocję na -10%
+    Wtedy promocja nie może być wprowadzona
+    
   Scenariusz: Obniżka równa cenie
     Mając produkt "Masło" o cenie 4 zł
     Kiedy ustawiem dla niego promocję na 100%
