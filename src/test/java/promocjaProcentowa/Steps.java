@@ -14,6 +14,8 @@ public class Steps {
 
     private Produkt produkt;
 
+    private Date dzis;
+
     @Mając("^produkt \"(.*?)\" o cenie ([\\.\\d]+) zł$")
     public void produkt_o_cenie_zł(String nazwa, BigDecimal cena) {
         produkt = PromotionsDSL.utworzNowyProdukt(nazwa, cena);
@@ -36,18 +38,17 @@ public class Steps {
         assertThat(cenaProduktu).isEqualTo(zalozonaCena);
     }
 
-//    @Mając("^dziś jest \"(.*?)\"$")
-//    public void dziś_jest(@Format("dd.MM.yyyy") Date dzien) {
-//    }
-//
-//    @Kiedy("^ustawiam dla niego promocję na (\\d+)% z długością promocji (\\d+) dni$")
-//    public void ustawiam_dla_niego_promocję_na_z_długością_promocji_dni(int procentPromocji, int iloscDni) {
-//    }
-//
-//    @Wtedy("^w \"(.*?)\" dniu cena produktu \"(.*?)\" ([\\.\\d]+) zł$")
-//    public void w_dniu_cena_produktu_zł(@Format("dd.MM.yyyy") Date dzien, String produkt,
-//                                        BigDecimal cena) {
-//    }
+    @Mając("^dziś jest \"(.*?)\"$")
+    public void dziś_jest(@Format("dd.MM.yyyy") Date dzien) throws Throwable {
+        dzis = dzien;
+    }
+
+    @Kiedy("^ustawiam dla niego promocję na (\\d+)% bez daty końcowej$")
+    public void ustawiam_dla_niego_promocję_na_bez_daty_końcowej(int procentPromocji) throws Throwable {
+        Promocja p = new Promocja(procentPromocji, new Date(), null);
+        produkt.dodajPromocje(p);
+    }
+
 
 
 }
