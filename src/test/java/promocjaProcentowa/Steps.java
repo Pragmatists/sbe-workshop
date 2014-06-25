@@ -16,8 +16,9 @@ public class Steps {
 
     private Date dzis;
 
-    @Mając("^produkt \"(.*?)\" o cenie ([\\.\\d]+) zł$")
-    public void produkt_o_cenie_zł(String nazwa, BigDecimal cena) {
+    @Mając("^produkt \"(.*?)\" o cenie \"(.*?)\" zł$")
+    public void produkt_o_cenie_zł(String nazwa, String cenaStr) {
+        BigDecimal cena = new BigDecimal(cenaStr);
         produkt = PromotionsDSL.utworzNowyProdukt(nazwa, cena);
     }
 
@@ -29,10 +30,11 @@ public class Steps {
         PromotionsDSL.utworzNowaPromocje(produkt, procentPromocji, dataOd, dataDo);
     }
 
-    @Wtedy("^w dniu \"(.*?)\" cena produktu \"(.*?)\" wynosi \"([\\.\\d]+)\" zł$")
+    @Wtedy("^w dniu \"(.*?)\" cena produktu \"(.*?)\" wynosi \"(.*?)\" zł$")
     public void w_dniu_cena_produktu_wynosi_zł(
-            @Format("dd.MM.yyyy") Date dzien, String nazwaProduktu, BigDecimal zalozonaCena) {
+            @Format("dd.MM.yyyy") Date dzien, String nazwaProduktu, String zalozonaCenaStr) {
 
+        BigDecimal zalozonaCena = new BigDecimal(zalozonaCenaStr);
         BigDecimal cenaProduktu = produkt.dajCene(dzien);
 
         assertThat(cenaProduktu).isEqualTo(zalozonaCena);
