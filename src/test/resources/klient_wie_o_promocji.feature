@@ -20,7 +20,7 @@ Feature: Klient wie o promocji
     Then Klient widzi pustą listę promocji z informacją "Brak promocji. Zapisz się do news lettera."
  
  @automated
- Scenario: Wyświetlamy promocje na najbliższe 7 dni
+ Scenario: Wyświetlamy promocje na pojedyńcze produkty na najbliższe 7 dni
     Given Są zdefiniowane promocje na najbliższe 7 dni
     | promowany produkt | start      | koniec     | cena | cena z promocją
     | Masło             | 2014-06-02 | 2014-06-08 | 4    | 3.00
