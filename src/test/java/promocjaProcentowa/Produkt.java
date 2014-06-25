@@ -1,32 +1,27 @@
 package promocjaProcentowa;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Produkt {
 
-    private String nazwa;
+    private final String nazwa;
 
-    private BigDecimal cena;
+    private final BigDecimal cena;
+
+    private Promocja promocja;
 
     public Produkt(String nazwa, BigDecimal cena) {
         this.nazwa = nazwa;
         this.cena = cena;
     }
 
-    public String getNazwa() {
-        return nazwa;
+    public void dodajPromocje(Promocja promocja) {
+        this.promocja = promocja;
     }
 
-    public void setNazwa(String nazwa) {
-        this.nazwa = nazwa;
-    }
-
-    public BigDecimal getCena() {
+    public BigDecimal dajCene(Date dzien) {
         return cena;
-    }
-
-    public void setCena(BigDecimal cena) {
-        this.cena = cena;
     }
 
 }
