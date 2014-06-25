@@ -16,3 +16,5 @@ Funkcja: Promocja kwotowa
     
   Scenariusz: Obniżka równa cenie
   Scenariusz: Już istnieje promocja na produkt
+  Scenariusz: Długość trwania promocji
+  Scenariusz: Możliwość zakończenia promocji
