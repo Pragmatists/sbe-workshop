@@ -24,14 +24,15 @@ public class Steps {
                                                                       @Format("dd.MM.yyyy") Date dataOd,
                                                                       @Format("dd.MM.yyyy")
                                                                       Date dataDo) {
-        Promocja promocja = new Promocja(procentPromocji, dataOd, dataDo);
-        produkt.dodajPromocje(promocja);
+        PromotionsDSL.utworzNowaPromocje(produkt, procentPromocji, dataOd, dataDo);
     }
 
     @Wtedy("^w dniu \"(.*?)\" cena produktu \"(.*?)\" wynosi ([\\.\\d]+) zł$")
     public void w_dniu_cena_produktu_wynosi_zł(
             @Format("dd.MM.yyyy") Date dzien, String nazwaProduktu, BigDecimal zalozonaCena) {
+
         BigDecimal cenaProduktu = produkt.dajCene(dzien);
+
         assertThat(cenaProduktu).isEqualTo(zalozonaCena);
     }
 
