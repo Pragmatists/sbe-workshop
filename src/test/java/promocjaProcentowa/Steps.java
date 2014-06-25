@@ -8,16 +8,15 @@ import cucumber.api.java.pl.Kiedy;
 import cucumber.api.java.pl.Mając;
 import cucumber.api.java.pl.Wtedy;
 
-public class Steps {
+import static org.assertj.core.api.Assertions.assertThat;
 
-    Magazyn m = new Magazyn();
+public class Steps {
 
     private Produkt produkt;
 
     @Mając("^produkt \"(.*?)\" o cenie ([\\.\\d]+) zł$")
     public void produkt_o_cenie_zł(/*Masło*/String nazwa, BigDecimal cena) {
         produkt = PromotionsDSL.utworzNowyProdukt(nazwa, cena);
-        m.dodajProduct(produkt);
     }
 
     @Kiedy("^ustawiam dla niego promocję na (\\d+)% okresem promocji od \"(.*?)\" do \"(.*?)\"$")
@@ -31,11 +30,10 @@ public class Steps {
 
     @Wtedy("^w dniu \"(.*?)\" cena produktu \"(.*?)\" wynosi ([\\.\\d]+) zł$")
     public void w_dniu_cena_produktu_wynosi_zł(
-            @Format("dd.MM.yyyy") Date dzien, String nazwaProduktu, BigDecimal cana) {
+            @Format("dd.MM.yyyy") Date dzien, String nazwaProduktu, BigDecimal zalozonaCena) {
 
-        m.dajProdukt(nazwaProduktu);
-
-
+        BigDecimal cenaProduktu = produkt.dajCene(dzien);
+        assertThat(cenaProduktu).isEqualTo(zalozonaCena);
     }
 
 //    @Mając("^dziś jest \"(.*?)\"$")
