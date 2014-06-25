@@ -8,7 +8,7 @@ Funkcja: Promocja procentowa
   Szablon scenariusza: W trakcie trwania promocji z zakresem czasu cena jest obniżona
     Mając produkt "Masło" w cenie "4.00" zł
     I dziś mamy "24.06.2014"
-    Kiedy ustawiam dla niego promocję na "10"% okresem promocji od "25.06.2014" do "27.06.2014"
+    Kiedy ustawiam dla niego promocję na "10"% z okresem promocji od "25.06.2014" do "27.06.2014"
     Wtedy w dniu "<data>" cena produktu "Masło" wynosi "<cena>" zł
 
   Przykłady:
@@ -21,7 +21,7 @@ Funkcja: Promocja procentowa
 
   @PromocjaProcentowa
   Szablon scenariusza: W trakcie trwania promocji bez zakresu czasu cena jest obniżona
-    Mając produkt "Masło" o cenie "4.00" zł
+    Mając produkt "Masło" w cenie "4.00" zł
     I dziś mamy "25.06.2014"
     Kiedy ustawiam dla niego promocję na "10"% bez określania zakresu czasowego
     Wtedy w dniu "<data>" cena produktu "Masło" wynosi "<cena>" zł

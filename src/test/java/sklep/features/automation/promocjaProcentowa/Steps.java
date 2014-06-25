@@ -18,13 +18,13 @@ public class Steps {
 
     private Date dzis;
 
-    @Mając("^produkt \"(.*?)\" o cenie \"(.*?)\" zł$")
+    @Mając("^produkt \"(.*?)\" w cenie \"(.*?)\" zł$")
     public void produkt_o_cenie_zł(String nazwa, String cenaStr) {
         BigDecimal cena = new BigDecimal(cenaStr);
         produkt = PromotionsDSL.utworzNowyProdukt(nazwa, cena);
     }
 
-    @Kiedy("^ustawiam dla niego promocję na \"(\\d+)\"% okresem promocji od \"(.*?)\" do \"(.*?)\"$")
+    @Kiedy("^ustawiam dla niego promocję na \"(\\d+)\"% z okresem promocji od \"(.*?)\" do \"(.*?)\"$")
     public void ustawiam_dla_niego_promocję_na_okresem_promocji_od_do(int procentPromocji,
                                                                       @Format("dd.MM.yyyy") Date dataOd,
                                                                       @Format("dd.MM.yyyy")
@@ -47,12 +47,11 @@ public class Steps {
         dzis = dzien;
     }
 
-    @Kiedy("^ustawiam dla niego promocję na \"(\\d+)\"% bez daty końcowej$")
-    public void ustawiam_dla_niego_promocję_na_bez_daty_końcowej(int procentPromocji) throws Throwable {
+    @Kiedy("^ustawiam dla niego promocję na \"(\\d+)\"% bez określania zakresu czasowego$")
+    public void ustawiam_dla_niego_promocję_na_bez_określania_zakresu_czazsowego(int procentPromocji)
+        throws Throwable {
         Promocja p = new Promocja(procentPromocji, dzis, null);
         produkt.dodajPromocje(p);
     }
-
-
 
 }
