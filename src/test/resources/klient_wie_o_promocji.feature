@@ -17,19 +17,26 @@ Feature: Klient wie o promocji
     Given W sklepie nie ma zdefiniowanych żadnych promocji
     When Klient wchodzi na stronę z listą promocji
     Then Klient widzi pustą listę promocji
-    
+ 
+ @automated
  Scenario: Brak aktualnych promocji ale są promocje zdefiniowane na najbliższe 7 dni
     Given W sklepie nie ma zdefiniowanych aktualnych promocji ale są zdefiniowane promocje na najbliższe 7 dni
-    When Klient wchodzi na stronę z listą promocji
+    | promowany produkt | start      | koniec     | cena | cena z promocją
+    | Masło             | 2014-06-02 | 2014-06-08 | 4    | 3
+    | Maślanka          | 2014-06-10 | 2014-06-30 | 6    | 4
+    | Melon             | 2014-06-11 | 2014-06-15 | 5    | 4.50
+    | Jogurt            | 2014-06-18 | 2014-06-19 | 3    | 1
+    When Klient wchodzi na stronę z listą promocji dnia 2014-06-10
     Then Klient widzi listę promocji na najbliższe 7 dni
+    | promocja | start promocji | koniec promocji |
     
-Scenario: Wyświetlenie promocji przy produkcji
+Scenario: Wyświetlenie promocji przy produkcie
     Given W sklepie jest promocja 
     When Klient stoi przy produkcie objętym promocją
     Then Klient na etykiecie widzi warunki promocji
 
 Scenario: Wydrukowanie listy promocji na najbliższe 7 dni
-    Given W sklpeie są zdefiniowane promocje na najbliższe 7 dni
+    Given W sklepie są zdefiniowane promocje na najbliższe 7 dni
     When Klient naciska przycisk DRUKUJ
     Then Drukuje się lista promocji
     
