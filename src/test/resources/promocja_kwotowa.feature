@@ -1,5 +1,6 @@
 #language: pl
 @wip
+@promocja_kwotowa
 Funkcja: Promocja kwotowa
 
   Jako administrator chciałbym zdefiniować promocję kwotową dla konkretnego produktu
@@ -25,7 +26,7 @@ Funkcja: Promocja kwotowa
     Kiedy ustawiam dla niego promocję na kwotę 0zł
     Wtedy promocja nie może być wprowadzona
     
-    
+/*    
   Scenariusz: Obniżka równa cenie
   Mając produkt "Maślanka" o cenie 5 zł
     Kiedy ustawiam dla niego promocję na kwotę 5 zł
@@ -45,3 +46,4 @@ Funkcja: Promocja kwotowa
   
   Scenariusz: Długość trwania promocji z ustaloną datą końcową
   Scenariusz: Możliwość zakończenia promocji
+  */
