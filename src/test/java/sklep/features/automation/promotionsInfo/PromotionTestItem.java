@@ -1,4 +1,4 @@
-package promotionsInfo;
+package sklep.features.automation.promotionsInfo;
 
 public class PromotionTestItem {
 

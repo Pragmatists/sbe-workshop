@@ -1,4 +1,4 @@
-package skeleton;
+package sklep.features.automation;
 
 
 import com.payu.sbe.promotions.amount.AmountPromotion;

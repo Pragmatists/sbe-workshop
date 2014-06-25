@@ -1,4 +1,4 @@
-package skeleton;
+package sklep.features;
 
 import org.junit.runner.RunWith;
 

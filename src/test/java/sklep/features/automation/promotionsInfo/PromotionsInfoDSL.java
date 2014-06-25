@@ -1,4 +1,4 @@
-package promotionsInfo;
+package sklep.features.automation.promotionsInfo;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

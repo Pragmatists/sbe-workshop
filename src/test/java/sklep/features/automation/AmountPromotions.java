@@ -1,4 +1,4 @@
-package skeleton;
+package sklep.features.automation;
 
 
 import static org.assertj.core.api.Assertions.assertThat;

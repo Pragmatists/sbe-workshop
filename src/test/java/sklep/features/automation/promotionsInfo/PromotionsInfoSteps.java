@@ -1,4 +1,4 @@
-package promotionsInfo;
+package sklep.features.automation.promotionsInfo;
 
 import static org.junit.Assert.assertTrue;
 
@@ -24,7 +24,7 @@ public class PromotionsInfoSteps {
     public void Klient_widzi_pustą_listę_promocji_z_informacją(String info) throws Throwable {
     }
 
-    @Given("^Są zdefiniowane promocje$")
+    @Given("^Są zdefiniowane sklep.features.promocje$")
     public void Są_zdefiniowane_promocje_na_najbliższe_dni( List<PromotionTestItem> items) throws Throwable {
         dsl.setPromotionItems(items);
     }

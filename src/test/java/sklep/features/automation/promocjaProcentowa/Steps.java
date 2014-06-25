@@ -1,4 +1,4 @@
-package promocjaProcentowa;
+package sklep.features.automation.promocjaProcentowa;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -7,6 +7,8 @@ import cucumber.api.Format;
 import cucumber.api.java.pl.Kiedy;
 import cucumber.api.java.pl.Mając;
 import cucumber.api.java.pl.Wtedy;
+import promocjaProcentowa.Produkt;
+import promocjaProcentowa.Promocja;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

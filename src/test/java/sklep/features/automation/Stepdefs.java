@@ -1,6 +1,7 @@
-package skeleton;
+package sklep.features.automation;
 
 import cucumber.api.java.en.Given;
+import skeleton.Belly;
 
 public class Stepdefs {
 

@@ -1,4 +1,7 @@
-package promocjaProcentowa;
+package sklep.features.automation.promocjaProcentowa;
+
+import promocjaProcentowa.Produkt;
+import promocjaProcentowa.Promocja;
 
 import java.math.BigDecimal;
 import java.util.Date;

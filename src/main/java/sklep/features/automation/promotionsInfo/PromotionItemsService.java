@@ -1,4 +1,4 @@
-package promotionsInfo;
+package sklep.features.automation.promotionsInfo;
 
 import java.util.ArrayList;
 import java.util.Date;
