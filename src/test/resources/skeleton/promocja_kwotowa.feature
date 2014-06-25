@@ -22,4 +22,5 @@ Funkcja: Promocja kwotowa
     | 4 zł | 4 zł |
     | 2 zł | 6 zł |
     | 2 zł | -1 zł |
+    | 10 zł | 3 zł |
     | 5 zł | 0 zł  |
