@@ -18,6 +18,13 @@ Funkcja: Promocja kwotowa
     | cena | kwota |
     | 4 zł | 4 zł |
     | 2 zł | 6 zł |
+    | 2 zł | -1 zł |
+    
+  Szablon scenariusza: Brak możliwości ustawienia promocji na kwotę 0 zł
+    Mając produkt "Maślanka" o cenie 5zł
+    Kiedy ustawiam dla niego promocję na kwotę 0zł
+    Wtedy promocja nie może być wprowadzona
+    
     
   Scenariusz: Obniżka równa cenie
   Mając produkt "Maślanka" o cenie 5 zł
