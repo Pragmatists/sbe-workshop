@@ -7,6 +7,6 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome = true, tags = {"@todo"})
-public class RunCukesTest {
+public class AmountPromotionsRunner {
 
 }
