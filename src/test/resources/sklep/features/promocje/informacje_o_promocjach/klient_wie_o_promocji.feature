@@ -17,8 +17,34 @@ Feature: Klient wie o promocji
     Given W sklepie nie ma zdefiniowanych żadnych promocji
     When Klient wchodzi na stronę z listą promocji
     Then Klient widzi pustą listę promocji z informacją "Brak promocji. Zapisz się do news lettera."
- 
- @automated
+
+  @new
+  Scenario: Wyświetlanie aktywnych promocji
+    Given Promocja na "Jogurt" jest aktywna w 2014-04-10
+    When Klient wchodzi na stronę z listą promocji 2014-04-10
+    Then Klient widzi napis "Jogurt"
+
+  @new
+  Scenario: Nie wyświetlanie nieaktywnych promocji
+    Given Promocja na "Jogurt" nie jest aktywna w 2014-04-10
+    When Klient wchodzi na stronę z listą promocji 2014-04-10
+    Then Klient nie widzi napis "Jogurt"
+
+  @new
+  Scenario Outline: Aktywność promocji
+    Given dziś jest 2014-04-10
+    When promocja na "Jogurt" obowiązuje od <start> do <koniec>
+    Then promocja na "Jogurt" <aktywnosc>
+  Examples:
+    | start | koniec | aktywnosc |
+    |2014-04-09|2014-04-12|jest aktywna|
+    |2014-04-07|2014-04-09|nie jest aktywna|
+    |2014-04-10|2014-04-12|jest aktywna|
+    |2014-04-09|2014-04-10|jest aktywna|
+    |2014-04-13|2014-04-14|nie jest aktywna|
+    |2014-04-10|2014-04-10|jest aktywna|
+
+  @automated
  Scenario: Wyświetlamy promocje na pojedyńcze produkty na najbliższe 7 dni
     Given Są zdefiniowane promocje
     | promowany produkt | start      | koniec     |
