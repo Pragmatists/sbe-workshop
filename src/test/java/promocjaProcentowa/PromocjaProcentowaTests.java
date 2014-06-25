@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions
+@CucumberOptions(format = { "pretty", "html:target/cucumber", "json:target/cucumber.json" })
 public class PromocjaProcentowaTests {
 
 }
