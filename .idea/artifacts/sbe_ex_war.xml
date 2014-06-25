@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="sbe-ex:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="sbe-ex.war">
-      <element id="artifact" artifact-name="sbe-ex:war exploded" />
-    </root>
-  </artifact>
-</component>

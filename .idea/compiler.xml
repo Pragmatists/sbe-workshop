@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="sbe-ex" />
+        <module name="sbe-workshop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="sbe-ex" target="1.6" />
+      <module name="sbe-workshop" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
