@@ -21,7 +21,7 @@ Funkcja: Promocja procentowa
   @PromocjaProcentowa
   Szablon scenariusza: Dla promocji bez ustawionej daty końcowej cena jest obniżona
     Mając produkt "Masło" o cenie "4.00" zł
-    I dziś jest "25.06.2014"
+    I dziś mamy "25.06.2014"
     Kiedy ustawiam dla niego promocję na 10% bez daty końcowej
     Wtedy w dniu "<data>" cena produktu "Masło" wynosi "<cena>" zł
 

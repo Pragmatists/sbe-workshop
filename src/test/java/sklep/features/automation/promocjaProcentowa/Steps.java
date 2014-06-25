@@ -42,8 +42,8 @@ public class Steps {
         assertThat(cenaProduktu).isEqualTo(zalozonaCena);
     }
 
-    @Mając("^dziś jest \"(.*?)\"$")
-    public void dziś_jest(@Format("dd.MM.yyyy") Date dzien) throws Throwable {
+    @Mając("^dziś mamy \"(.*?)\"$")
+    public void dziś_mamy(@Format("dd.MM.yyyy") Date dzien) throws Throwable {
         dzis = dzien;
     }
 

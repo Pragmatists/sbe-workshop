@@ -1,4 +1,4 @@
-package sklep.features.automation.promocjaProcentowa;
+package sklep.features;
 
 import org.junit.runner.RunWith;
 
