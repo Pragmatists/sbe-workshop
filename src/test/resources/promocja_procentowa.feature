@@ -19,10 +19,16 @@ Funkcja: Promocja procentowa
     Kiedy ustawiem dla niego promocję na 100%
     Wtedy promocja nie może być wprowadzona
     
-  Scenariusz: Już istnieje promocja na produkt
-    Mając produkt "Masło" o cenie 4 zł objęty inną promocja na 25%
+  Scenariusz: Już istnieje promocja procentowa na produkt
+    Mając produkt "Masło" o cenie 4 zł objęty inną promocją na 25%
+    Kiedy ustawiam dla niego promocję na 50%
+    Wtedy cena produktu "Masło" 2 zł
+  
+  Scenariusz: Już istnieje promocja kwotowa na produkt
+    Mając produkt "Masło" o cenie 4 zł objęty inną promocją na 1 zł
     Kiedy ustawiam dla niego promocję na 50%
     Wtedy cena produktu "Masło" 2 zł
     
   Scenariusz: Długość trwania promocji
+    Mając produkt "Masło" objęty 
   Scenariusz: Możliwość zakończenia promocji
