@@ -12,8 +12,7 @@ Feature: Klient wie o promocji
     Given W sklepie jest aktywna promocja dla owsianki i maślanki
     When Klient wchodzi na stronę z listą promocji
     Then Klient widzi promocję dla owsianki i maślanki
-    
- @automated
+
  Scenario: Brak promocji
     Given W sklepie nie ma zdefiniowanych żadnych promocji
     When Klient wchodzi na stronę z listą promocji
@@ -21,15 +20,15 @@ Feature: Klient wie o promocji
  
  @automated
  Scenario: Wyświetlamy promocje na pojedyńcze produkty na najbliższe 7 dni
-    Given Są zdefiniowane promocje na najbliższe 7 dni
+    Given Są zdefiniowane promocje
     | promowany produkt | start      | koniec     |
     | Masło             | 2014-06-02 | 2014-06-08 |
     | Maślanka          | 2014-06-10 | 2014-06-30 |
     | Melon             | 2014-06-11 | 2014-06-15 |
     | Jogurt            | 2014-06-18 | 2014-06-19 |
-    And dziś jest 2014-06-10
+    And dziś jest "2014-06-10"
     When Klient wchodzi na stronę z listą promocji 
-    Then Klient widzi produkty w promocji "Maślanka","Melon"
+    Then Klient widzi "Maślanka, Melon"
     
 Scenario: Wyświetlenie promocji przy produkcie
     Given W sklepie jest promocja 
