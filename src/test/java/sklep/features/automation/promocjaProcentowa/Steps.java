@@ -24,7 +24,7 @@ public class Steps {
         produkt = PromotionsDSL.utworzNowyProdukt(nazwa, cena);
     }
 
-    @Kiedy("^ustawiam dla niego promocję na (\\d+)% okresem promocji od \"(.*?)\" do \"(.*?)\"$")
+    @Kiedy("^ustawiam dla niego promocję na \"(\\d+)\"% okresem promocji od \"(.*?)\" do \"(.*?)\"$")
     public void ustawiam_dla_niego_promocję_na_okresem_promocji_od_do(int procentPromocji,
                                                                       @Format("dd.MM.yyyy") Date dataOd,
                                                                       @Format("dd.MM.yyyy")
@@ -47,7 +47,7 @@ public class Steps {
         dzis = dzien;
     }
 
-    @Kiedy("^ustawiam dla niego promocję na (\\d+)% bez daty końcowej$")
+    @Kiedy("^ustawiam dla niego promocję na \"(\\d+)\"% bez daty końcowej$")
     public void ustawiam_dla_niego_promocję_na_bez_daty_końcowej(int procentPromocji) throws Throwable {
         Promocja p = new Promocja(procentPromocji, dzis, null);
         produkt.dodajPromocje(p);
