@@ -23,5 +23,8 @@ Feature: Klient wie o promocji
     When Klient wchodzi na stronę z listą promocji
     Then Klient widzi listę promocji na najbliższe 7 dni
     
-
+Scenario: Wyświetlenie promocji przy produkcji
+    Given W sklepie jest promocja 
+    When Klient stoi przy produkcie objętym promocją
+    Then Klient na etykiecie widzi warunki promocji
 
