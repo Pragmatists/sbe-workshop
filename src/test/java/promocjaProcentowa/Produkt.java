@@ -21,6 +21,9 @@ public class Produkt {
     }
 
     public BigDecimal dajCene(Date dzien) {
+        if(dzien.before(promocja.dajDateDo()) && dzien.after(promocja.dajDateOd())) {
+            return cena.multiply(new BigDecimal(promocja.dajProcentPromocji())).divide(new BigDecimal(100));
+        }
         return cena;
     }
 

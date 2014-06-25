@@ -14,4 +14,15 @@ public class Promocja {
         this.dataDo = dataDo;
     }
 
+    public Date dajDateDo() {
+        return dataDo;
+    }
+
+    public Date dajDateOd() {
+        return dataOd;
+    }
+
+    public int dajProcentPromocji() {
+        return procentPromocji;
+    }
 }

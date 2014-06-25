@@ -29,7 +29,7 @@ public class Steps {
         PromotionsDSL.utworzNowaPromocje(produkt, procentPromocji, dataOd, dataDo);
     }
 
-    @Wtedy("^w dniu \"(.*?)\" cena produktu \"(.*?)\" wynosi ([\\.\\d]+) zł$")
+    @Wtedy("^w dniu \"(.*?)\" cena produktu \"(.*?)\" wynosi \"([\\.\\d]+)\" zł$")
     public void w_dniu_cena_produktu_wynosi_zł(
             @Format("dd.MM.yyyy") Date dzien, String nazwaProduktu, BigDecimal zalozonaCena) {
 

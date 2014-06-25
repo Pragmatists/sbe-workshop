@@ -11,12 +11,12 @@ Funkcja: Promocja procentowa
     Wtedy w dniu <data> cena produktu "Masło" wynosi <cena> zł
 
   Przykłady:
-    | data         | cena |
-    | "24.06.2014" | 4.00 |
-    | "25.06.2014" | 3.60 |
-    | "26.06.2014" | 3.60 |
-    | "27.06.2014" | 3.60 |
-    | "28.06.2014" | 4.00 |
+    | data         | cena   |
+    | "24.06.2014" | "4.00" |
+    | "25.06.2014" | "3.60" |
+    | "26.06.2014" | "3.60" |
+    | "27.06.2014" | "3.60" |
+    | "28.06.2014" | "4.00" |
 
   @PromocjaProcentowa
   Szablon scenariusza: Dla promocji bez ustawionej daty końcowej cena jest obniżona
