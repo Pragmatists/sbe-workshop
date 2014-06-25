@@ -1,18 +1,15 @@
 #language: pl
-@wip
-@promocja_kwotowa
 Funkcja: Promocja kwotowa
 
   Jako administrator chciałbym zdefiniować promocję kwotową dla konkretnego produktu
+  Poprawna kwota promocji jest mniejsza od ceny produktu i większa od zera
 
-  @todo
   Scenariusz: Wpływ kwoty promocji na cenę produktu
     Mając produkt o cenie 6 zł
     Kiedy ustawiam dla niego promocję na kwotę 2 zł
     Wtedy cena produktu wynosi 4 zł
 
-  @todo
-  Szablon scenariusza: Brak możliwości ustawienia promocji
+  Szablon scenariusza: Brak możliwości ustawienia promocji kiedy kwota promocji jest nieprawidłowa
     Mając produkt o cenie <cena>
     Kiedy ustawiam dla niego promocję na kwotę <kwota>
     Wtedy promocja nie może być wprowadzona
