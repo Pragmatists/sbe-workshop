@@ -1,4 +1,4 @@
-package skeleton;
+package com.payu.sbe.promotions.amount;
 
 public class AmountPromotion {
 

@@ -3,6 +3,9 @@ package skeleton;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.payu.sbe.promotions.amount.AmountPromotion;
+import com.payu.sbe.promotions.amount.Product;
+
 import cucumber.api.java.pl.Kiedy;
 import cucumber.api.java.pl.Wtedy;
 
