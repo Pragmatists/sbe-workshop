@@ -29,6 +29,21 @@ Funkcja: Promocja procentowa
     Kiedy ustawiam dla niego promocję na 50%
     Wtedy cena produktu "Masło" 2 zł
     
-  Scenariusz: Długość trwania promocji
-    Mając produkt "Masło" objęty 
-  Scenariusz: Możliwość zakończenia promocji
+  Scenariusz: W trakcie trwania promocji cena jest obniżona
+    Mając produkt "Masło" o cenie 4 zł 
+      I dziś jest 25.06.2014
+    Kiedy ustawiam dla niego promocję na 10% z długością promocji 10 dni
+    Wtedy w 05.07.2014 dniu cena produktu "Masło" 3,60 zł
+    
+  Scenariusz: Po okresie trwania promocji cena nie jest obniżona
+    Mając produkt "Masło" o cenie 4 zł 
+      I dziś jest 25.06.2014
+    Kiedy ustawiam dla niego promocję na 10% z długością promocji 10 dni
+    Wtedy w 06.07.2014 dniu cena produktu "Masło" 4 zł
+    
+/*
+  Scenariusz: Możliwość zakończenia promocji przed upływem czasu trwania
+    Mając produkt "Masło" o cenie wyjściowej 4 zł objęty promocją 10%
+    Kiedy deaktywuję promocję dla tego produktu
+    Wtedy cena produktu "Masło" wynosi 4 zł
+*/
