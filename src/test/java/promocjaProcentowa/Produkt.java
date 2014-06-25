@@ -2,6 +2,7 @@ package promocjaProcentowa;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import org.joda.time.DateTime;
 
 public class Produkt {
 
@@ -21,8 +22,13 @@ public class Produkt {
     }
 
     public BigDecimal dajCene(Date dzien) {
-        if(dzien.before(promocja.dajDateDo()) && dzien.after(promocja.dajDateOd())) {
-            return cena.multiply(new BigDecimal(promocja.dajProcentPromocji())).divide(new BigDecimal(100));
+        DateTime dzienDateTime = new DateTime(dzien.getTime());
+        if(dzienDateTime.isBefore(promocja.dajDateDo().getTime() + 24 * 3600) && dzienDateTime.isAfter(promocja
+                        .dajDateOd().getTime() - 24 * 3600)) {
+
+            BigDecimal result = cena.multiply(new BigDecimal(100 - promocja.dajProcentPromocji())).divide(new BigDecimal
+                    (100));
+            return result;
         }
         return cena;
     }
