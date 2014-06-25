@@ -47,7 +47,7 @@ public class Steps {
 
     @Kiedy("^ustawiam dla niego promocję na (\\d+)% bez daty końcowej$")
     public void ustawiam_dla_niego_promocję_na_bez_daty_końcowej(int procentPromocji) throws Throwable {
-        Promocja p = new Promocja(procentPromocji, new Date(), null);
+        Promocja p = new Promocja(procentPromocji, dzis, null);
         produkt.dodajPromocje(p);
     }
 

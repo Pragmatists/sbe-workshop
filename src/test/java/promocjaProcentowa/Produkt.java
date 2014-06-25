@@ -23,11 +23,17 @@ public class Produkt {
 
     public BigDecimal dajCene(Date dzien) {
         DateTime dzienDateTime = new DateTime(dzien.getTime());
-        if(dzienDateTime.isBefore(promocja.dajDateDo().getTime() + 24 * 3600) && dzienDateTime.isAfter(promocja
-                        .dajDateOd().getTime() - 24 * 3600)) {
-
-            BigDecimal result = cena.multiply(new BigDecimal(100 - promocja.dajProcentPromocji())).divide(new BigDecimal
-                    (100));
+        long dzienPo;
+        try {
+            dzienPo = promocja.dajDateDo().getTime() + 24 * 3600;
+        } catch (NullPointerException e) {
+            dzienPo = Long.MAX_VALUE;
+        }
+        long dzienPrzed2 = promocja.dajDateOd().getTime() - 24 * 3600;
+        if(dzienDateTime.isBefore(dzienPo)
+                &&
+                dzienDateTime.isAfter(dzienPrzed2)) {
+            BigDecimal result = cena.multiply(new BigDecimal(100 - promocja.dajProcentPromocji())).divide(new BigDecimal(100));
             return result;
         }
         return cena;
