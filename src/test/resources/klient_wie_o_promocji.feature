@@ -13,22 +13,25 @@ Feature: Klient wie o promocji
     When Klient wchodzi na stronę z listą promocji
     Then Klient widzi promocję dla owsianki i maślanki
     
+ @automated
  Scenario: Brak promocji
     Given W sklepie nie ma zdefiniowanych żadnych promocji
-    When Klient wchodzi na stronę z listą promocji
-    Then Klient widzi pustą listę promocji
+    When Klient wchodzi na stronę http://localhost:8080/promocje.jsp z listą promocji
+    Then Klient widzi pustą listę promocji z informacją "Brak promocji. Zapisz się do news lettera."
  
  @automated
- Scenario: Brak aktualnych promocji ale są promocje zdefiniowane na najbliższe 7 dni
-    Given W sklepie nie ma zdefiniowanych aktualnych promocji ale są zdefiniowane promocje na najbliższe 7 dni
+ Scenario: Wyświetlamy promocje na najbliższe 7 dni
+    Given Są zdefiniowane promocje na najbliższe 7 dni
     | promowany produkt | start      | koniec     | cena | cena z promocją
-    | Masło             | 2014-06-02 | 2014-06-08 | 4    | 3
-    | Maślanka          | 2014-06-10 | 2014-06-30 | 6    | 4
-    | Melon             | 2014-06-11 | 2014-06-15 | 5    | 4.50
-    | Jogurt            | 2014-06-18 | 2014-06-19 | 3    | 1
-    When Klient wchodzi na stronę z listą promocji dnia 2014-06-10
+    | Masło             | 2014-06-02 | 2014-06-08 | 4    | 3.00
+    | Maślanka          | 2014-06-10 | 2014-06-30 | 6    | 4.99
+    | Melon             | 2014-06-11 | 2014-06-15 | 5    | 4.00
+    | Jogurt            | 2014-06-18 | 2014-06-19 | 3    | 1.95
+    When Klient wchodzi na stronę http://localhost:8080/promocje.jsp z listą promocji dnia 2014-06-10
     Then Klient widzi listę promocji na najbliższe 7 dni
-    | promocja | start promocji | koniec promocji |
+    | promocja  | start promocji | koniec promocji | cena | cena z promocją
+    | Maślanka  | 2014-06-10     | 2014-06-30      | 6    | 4.99
+    | Melon     | 2014-06-11     | 2014-06-15      | 5    | 4.00
     
 Scenario: Wyświetlenie promocji przy produkcie
     Given W sklepie jest promocja 
