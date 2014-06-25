@@ -1,31 +1,37 @@
 package skeleton;
 
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 import cucumber.api.java.pl.Kiedy;
 import cucumber.api.java.pl.Wtedy;
 
 public class AmountPromotions {
-    
 
-    @cucumber.api.java.pl.Mając("^produkt \"([^\"]*)\" o cenie (\\d+) zł$")
-    public void produkt_o_cenie_zł(String productName, int price) throws Throwable {
-        
-//        AmountPromotion ap = new AmountPromotion(p, );
-        System.out.println(productName);
-//        throw new cucumber.api.PendingException();
+    Product product;
+
+    private static final String PRODUCT_NAME = "Maślanka";
+
+    @cucumber.api.java.pl.Mając("^produkt o cenie (\\d+) zł$")
+    public void produkt_o_cenie_zł(int price) throws Throwable {
+        product = new Product(PRODUCT_NAME, price);
     }
 
-    @Kiedy("^ustawiam dla niego promocję na kwotę (\\d+) zł$")
-    public void ustawiam_dla_niego_promocję_na_kwotę_zł(int arg1) throws Throwable {
-        // Express the Regexp above with the code you wish you had
+    @Kiedy("^ustawiam dla niego promocję na kwotę (-?\\d+) zł$")
+    public void ustawiam_dla_niego_promocję_na_kwotę_zł(int amount) throws Throwable {
+        AmountPromotion promotion = new AmountPromotion(amount);
+        product.setPromotion(promotion);
     }
 
-    @Wtedy("^cena produktu \"([^\"]*)\" wynosi (\\d+) zł$")
-    public void cena_produktu_wynosi_zł(String arg1, int arg2) throws Throwable {
-        // Express the Regexp above with the code you wish you had
+    @Wtedy("^cena produktu wynosi (\\d+) zł$")
+    public void cena_produktu_wynosi_zł(int amount) throws Throwable {
+        assertThat(product.getPrice()).isEqualTo(amount);
     }
 
     @Wtedy("^promocja nie może być wprowadzona$")
     public void promocja_nie_może_być_wprowadzona() throws Throwable {
-        // Express the Regexp above with the code you wish you had
+       assertThat(product.isPromoted()).isFalse();
     }
+
+
 }

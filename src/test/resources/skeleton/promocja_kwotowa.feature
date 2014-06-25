@@ -7,13 +7,13 @@ Funkcja: Promocja kwotowa
 
   @todo
   Scenariusz: Wpływ kwoty promocji na cenę produktu
-    Mając produkt "Maślanka" o cenie 6 zł
+    Mając produkt o cenie 6 zł
     Kiedy ustawiam dla niego promocję na kwotę 2 zł
-    Wtedy cena produktu "Maślanka" wynosi 4 zł
+    Wtedy cena produktu wynosi 4 zł
 
   @todo
   Szablon scenariusza: Brak możliwości ustawienia promocji
-    Mając produkt "Maślanka" o cenie <cena>
+    Mając produkt o cenie <cena>
     Kiedy ustawiam dla niego promocję na kwotę <kwota>
     Wtedy promocja nie może być wprowadzona
     
